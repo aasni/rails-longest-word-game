@@ -1,0 +1,18 @@
+<div class="container m-5 p-4 card border-black border-2">
+<h1>The Game</h1>
+<p>Here are your letters:</p>
+<p><%= @letters.join(" ") %></p>
+<%= form_with do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters.join(" ") %>
+
+  <div>
+    <label for="word">Your word:</label>
+    <%= text_field_tag :word %>
+  </div>
+
+  <div>
+    <%= submit_tag "Give a word" %>
+  </div>
+<% end %>
+</div>
